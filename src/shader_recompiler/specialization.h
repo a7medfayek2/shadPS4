@@ -293,7 +293,7 @@ struct SamplerSpecialization {
 }
 
 [[nodiscard]] inline FMaskSpecialization MakeFMaskSpecialization(AmdGpu::Image sharp) noexcept {
-    return {.width = sharp.width, .height = sharp.height};
+    return {.width = static_cast<u32>(sharp.width), .height = static_cast<u32>(sharp.height)};
 }
 
 [[nodiscard]] inline SamplerSpecialization MakeSamplerSpecialization(
